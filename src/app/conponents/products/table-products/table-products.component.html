@@ -1,0 +1,25 @@
+<section class="container">
+  <h2>Produtos</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Código de barras</th>
+      <th>Quantidade</th>
+    </thead>
+    <tbody >
+      <tr *ngFor="let product of productResponse.items">
+        <td>{{product?.id_product}}</td>
+        <td>{{product?.name}}</td>
+        <td>{{product?.barcode}}</td>
+        <td>{{product?.quantity}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <ng-template #listaVazia>
+    <h3>Nemhum produto encontrado</h3>
+  </ng-template> -->
+
+</section>
