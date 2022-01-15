@@ -1,5 +1,4 @@
 import { Product, ProductResponse } from './../model/product.model';
-import { ListProduct } from './../model/list-product.model';
 import { ProductService } from './../product.service';
 import { Component, Input, OnInit } from '@angular/core';
 
