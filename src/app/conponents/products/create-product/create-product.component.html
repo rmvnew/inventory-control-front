@@ -10,9 +10,17 @@
         <app-select-categories></app-select-categories>
 
     </div>
+
     <div class="col">
 
-        <label for="invoice" class="form-label" >Número da Nota Fiscal</label>
+        <label for="category" class="form-label" >Setor responsável</label>
+        <app-select-department></app-select-department>
+
+    </div>
+
+    <div class="col col-lg-2">
+
+        <label for="invoice" class="form-label" >N da Nota</label>
         <input type="text" class="form-control" [(ngModel)]="request.id_invoice" [ngModelOptions]="{standalone: true}">
 
     </div>

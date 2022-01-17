@@ -1,6 +1,6 @@
 import { CategoryService } from '../category.service';
 import { Component, OnInit } from '@angular/core';
-import { CategoryResponse } from '../../products/model/category.model';
+import { CategoryResponse } from '../model/category.model';
 
 @Component({
   selector: 'app-select-categories',
@@ -9,14 +9,20 @@ import { CategoryResponse } from '../../products/model/category.model';
 })
 export class SelectCategoriesComponent implements OnInit {
 
-  categorieResponse!: CategoryResponse
+  categorieResponse: CategoryResponse[] = []
 
   constructor(private service: CategoryService) { }
 
   ngOnInit(): void {
 
     this.service.getAllCategories()
-      .subscribe(res => this.categorieResponse = res)
+      .subscribe(res => {
+
+        for (let index = 0; index < res.length; index++) {
+          this.categorieResponse.push(res[index])
+        }
+
+      })
 
   }
 

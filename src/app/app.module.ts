@@ -6,12 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './conponents/header/header.component';
 import { CategoriesComponent } from './conponents/categories/categories.component';
+import { DepartmentComponent } from './conponents/department/department.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CategoriesComponent
+
   ],
   imports: [
     BrowserModule,

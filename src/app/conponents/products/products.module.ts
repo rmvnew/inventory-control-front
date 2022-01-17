@@ -1,3 +1,4 @@
+import { DepartmentModule } from './../department/department.module';
 import { CategoryModule } from './../categories/category.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +16,8 @@ import { CreateProductComponent } from './create-product/create-product.componen
     CommonModule,
     HttpClientModule,
     FormsModule,
-    CategoryModule
+    CategoryModule,
+    DepartmentModule
   ],
   declarations: [
     ListProductsComponent,
