@@ -1,3 +1,4 @@
+import { CreateCategoryComponent } from './conponents/categories/create-category/create-category.component';
 import { CreateProductComponent } from './conponents/products/create-product/create-product.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -21,7 +22,12 @@ const routes: Routes = [
   {
     path: 'category/list',
     component:ListCategoriesComponent
+  },
+  {
+    path: 'category/create',
+    component: CreateCategoryComponent
   }
+
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CategoryResponse, CategoryPaginateResponse } from './model/category.model';
+import { CategoryResponse, CategoryPaginateResponse, CategoryRequest } from './model/category.model';
 
 
 @Injectable({
@@ -20,6 +20,10 @@ export class CategoryService {
 
   getAllCategoriesPaginate(): Observable<CategoryPaginateResponse> {
     return this.http.get<CategoryPaginateResponse>(this.URL_PAGINATE)
+  }
+
+  createCategories(category:CategoryRequest):Observable<CategoryResponse>{
+    return this.http.post<CategoryResponse>(this.URL_PAGINATE,category)
   }
 
 }

@@ -1,0 +1,22 @@
+
+<h2>Cadastrar Categorias</h2>
+
+<hr>
+<form>
+
+  <div class="row">
+
+    <div class="col">
+
+        <label for="invoice" class="form-label" >N da Nota</label>
+        <input type="text" class="form-control" [(ngModel)]="request.name" [ngModelOptions]="{standalone: true}">
+
+    </div>
+
+  </div>
+
+<div class="button_create">
+  <button type="submit" class="btn btn-primary" (click)="save()">Cadastrar</button>
+</div>
+
+</form>
