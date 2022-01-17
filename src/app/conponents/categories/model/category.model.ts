@@ -8,3 +8,32 @@
   }
 
 
+
+
+    export interface Item {
+        id_category: number;
+        name: string;
+        isActive: boolean;
+        createAt: Date;
+        updateAt: Date;
+    }
+
+    export interface Meta {
+        totalItems: number;
+        itemCount: number;
+        itemsPerPage: number;
+        totalPages: number;
+        currentPage: number;
+    }
+
+    export interface CategoryPaginateResponse {
+        items: Item[];
+        meta: Meta;
+    }
+
+    export interface CategoryRequest {
+      name: string;
+  }
+
+
+

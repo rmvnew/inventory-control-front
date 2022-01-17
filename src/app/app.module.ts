@@ -1,12 +1,12 @@
-import { ProductsModule } from './conponents/products/products.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { CategoryModule } from './conponents/categories/category.module';
+import { ProductsModule } from './conponents/products/products.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './conponents/header/header.component';
-import { CategoriesComponent } from './conponents/categories/categories.component';
-import { DepartmentComponent } from './conponents/department/department.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { DepartmentComponent } from './conponents/department/department.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductsModule
+    ProductsModule,
+    CategoryModule
 
   ],
   providers: [],

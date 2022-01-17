@@ -1,0 +1,25 @@
+
+<section class="container">
+  <h2>Produtos</h2>
+
+  <table class="table table-striped" *ngIf="categoryPaginateResponse">
+    <thead>
+      <th>Id</th>
+      <th>Nome</th>
+
+    </thead>
+    <tbody >
+      <tr *ngFor="let product of categoryPaginateResponse.items">
+
+        <td>{{product?.id_category}}</td>
+        <td>{{product?.name}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <ng-template #listaVazia>
+    <h3>Nemhum produto encontrado</h3>
+  </ng-template> -->
+
+</section>
