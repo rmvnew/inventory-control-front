@@ -1,4 +1,4 @@
 <select class="form-select" aria-label="Default select example" *ngIf="departmentResponse">
-  <option selected>Escolha a Categoria</option>
+  <option selected>Escolha a Setor</option>
   <option *ngFor="let dep of departmentResponse" [value]="dep.id_department">{{dep.name}}</option>
 </select>

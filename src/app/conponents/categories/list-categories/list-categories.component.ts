@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-categories',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
+  }
+
+  redirect(){
+    this.route.navigateByUrl('/category/create')
   }
 
 }
