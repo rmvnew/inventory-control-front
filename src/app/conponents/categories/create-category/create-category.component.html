@@ -2,14 +2,14 @@
 <h2>Cadastrar Categorias</h2>
 
 <hr>
-<form>
+<form [formGroup]="myForm">
 
   <div class="row">
 
     <div class="col">
 
-        <label for="invoice" class="form-label" >N da Nota</label>
-        <input type="text" class="form-control" [(ngModel)]="request.name" [ngModelOptions]="{standalone: true}">
+        <label for="invoice" class="form-label" >Categoria</label>
+        <input type="text" class="form-control" placeholder="Nome da categoria" name="name" id="name" formControlName="name">
 
     </div>
 

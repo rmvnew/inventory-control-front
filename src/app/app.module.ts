@@ -13,12 +13,14 @@ import { HeaderComponent } from './conponents/header/header.component';
     AppComponent,
     HeaderComponent,
 
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProductsModule,
-    CategoryModule
+    CategoryModule,
 
   ],
   providers: [],

@@ -1,8 +1,8 @@
 
 
 
-export interface CategoryRequest {
-  name: string;
+export class CategoryRequest {
+  name:string = ''
 }
 
 export interface CategoryResponse {
