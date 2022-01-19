@@ -1,13 +1,13 @@
 <h2>Cadastrar produtos</h2>
 
 <hr>
-<form>
+<form [formGroup]="productFormGroup">
 
   <div class="row">
     <div class="col">
 
         <label for="category" class="form-label" >Categorias</label>
-        <app-select-categories></app-select-categories>
+        <app-select-categories (onChangeValues)="changed($event)"></app-select-categories>
 
     </div>
 
@@ -21,13 +21,13 @@
     <div class="col col-lg-2">
 
         <label for="invoice" class="form-label" >N da Nota</label>
-        <input type="text" class="form-control" [(ngModel)]="request.id_invoice" [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" >
 
     </div>
     <div class="col-6">
 
         <label for="product" class="form-label" >Nome do Produto</label>
-        <input type="text" class="form-control" [(ngModel)]="request.name" [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" formControlName="name">
 
     </div>
   </div>
@@ -38,42 +38,42 @@
     <div class="col">
 
         <label for="barcode" class="form-label">Código de barras</label>
-        <input type="barcode" class="form-control" [(ngModel)]="request.barcode" [ngModelOptions]="{standalone: true}">
+        <input type="barcode" class="form-control" formControlName="barcode">
 
     </div>
 
     <div class="col">
 
         <label for="partNumber" class="form-label">Part Number</label>
-        <input type="partNumber" class="form-control" [(ngModel)]="request.part_number" [ngModelOptions]="{standalone: true}">
+        <input type="partNumber" class="form-control" formControlName="part_number">
 
     </div>
 
     <div class="col">
 
         <label for="model" class="form-label">Módelo</label>
-        <input type="model" class="form-control" [(ngModel)]="request.model" [ngModelOptions]="{standalone: true}">
+        <input type="model" class="form-control" formControlName="model">
 
     </div>
 
     <div class="col">
 
         <label for="condition" class="form-label">Condição</label>
-        <input type="condition" class="form-control" [(ngModel)]="request.condition" [ngModelOptions]="{standalone: true}">
+        <input type="condition" class="form-control" formControlName="condition">
 
     </div>
 
     <div class="col col-lg-2">
 
         <label for="quantity" class="form-label">Quantidade</label>
-        <input type="quantity" class="form-control" [(ngModel)]="request.quantity" [ngModelOptions]="{standalone: true}">
+        <input type="quantity" class="form-control" formControlName="quantity">
 
     </div>
 
     <div class="col col-lg-2">
 
         <label for="minimalQuantity" class="form-label">Quantidade Minima</label>
-        <input type="minimalQuantity" class="form-control" [(ngModel)]="request.minimum_quantity" [ngModelOptions]="{standalone: true}">
+        <input type="minimalQuantity" class="form-control" formControlName="minimum_quantity">
 
     </div>
 
@@ -84,35 +84,30 @@
     <div class="col">
 
       <label for="value" class="form-label">Valor</label>
-      <input type="value" class="form-control" [(ngModel)]="request.value" [ngModelOptions]="{standalone: true}">
+      <input type="value" class="form-control" formControlName="value">
 
     </div>
 
     <div class="col">
 
       <label for="responsible" class="form-label">Responsável</label>
-      <input type="responsible" class="form-control" [(ngModel)]="request.responsible" [ngModelOptions]="{standalone: true}">
+      <input type="responsible" class="form-control" formControlName="responsible">
 
     </div>
 
+
+
     <div class="col">
 
-      <label for="responsible" class="form-label">Responsável</label>
-      <input type="responsible" class="form-control" [(ngModel)]="request.responsible" [ngModelOptions]="{standalone: true}">
+      <label for="institute_code" class="form-label">Código do Instituto</label>
+      <input type="institute_code" class="form-control" formControlName="institute_code">
 
     </div>
 
     <div class="col">
 
       <label for="location" class="form-label">Localização</label>
-      <input type="location" class="form-control" [(ngModel)]="request.location" [ngModelOptions]="{standalone: true}">
-
-    </div>
-
-    <div class="col">
-
-      <label for="institute_code" class="form-label">Código do Instituto</label>
-      <input type="institute_code" class="form-control" [(ngModel)]="request.institute_code" [ngModelOptions]="{standalone: true}">
+      <input type="location" class="form-control" formControlName="location">
 
     </div>
 

@@ -1,4 +1,4 @@
-<select class="form-select" aria-label="Default select example" *ngIf="categorieResponse">
+<select class="form-select" aria-label="Default select example" *ngIf="categorieResponse" (change)="onChanged($event.target)">
   <option selected>Escolha a Categoria</option>
   <option *ngFor="let cat of categorieResponse" [value]="cat.id_category">{{cat.name}}</option>
 </select>

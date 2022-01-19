@@ -1,5 +1,5 @@
 import { CategoryService } from '../category.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CategoryResponse } from '../model/category.model';
 
 @Component({
@@ -8,6 +8,10 @@ import { CategoryResponse } from '../model/category.model';
   styleUrls: ['./select-categories.component.css']
 })
 export class SelectCategoriesComponent implements OnInit {
+
+  @Output() onChangeValues = new EventEmitter<any>()
+
+
 
   categorieResponse: CategoryResponse[] = []
 
@@ -19,10 +23,19 @@ export class SelectCategoriesComponent implements OnInit {
       .subscribe(res => {
 
         for (let index = 0; index < res.length; index++) {
+
           this.categorieResponse.push(res[index])
+
         }
 
       })
+
+  }
+
+  onChanged(value:any){
+
+    const valueEmiter = {value: value.value}
+    this.onChangeValues.emit(valueEmiter)
 
   }
 

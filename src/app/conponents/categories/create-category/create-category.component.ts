@@ -23,11 +23,11 @@ export class CreateCategoryComponent implements OnInit {
 
   ) { }
 
-  createForm(category: CategoryRequest) {
-    this.myForm = new FormGroup({
-      name: new FormControl(category.name)
-    })
-  }
+  // createForm(category: CategoryRequest) {
+  //   this.myForm = new FormGroup({
+  //     name: new FormControl(category.name)
+  //   })
+  // }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
