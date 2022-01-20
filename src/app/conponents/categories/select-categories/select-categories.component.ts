@@ -9,7 +9,7 @@ import { CategoryResponse } from '../model/category.model';
 })
 export class SelectCategoriesComponent implements OnInit {
 
-  @Output() onChangeValues = new EventEmitter<any>()
+  @Output() onChangeCategoriesValues = new EventEmitter<any>()
 
 
 
@@ -35,7 +35,7 @@ export class SelectCategoriesComponent implements OnInit {
   onChanged(value:any){
 
     const valueEmiter = {value: value.value}
-    this.onChangeValues.emit(valueEmiter)
+    this.onChangeCategoriesValues.emit(valueEmiter)
 
   }
 

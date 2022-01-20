@@ -7,21 +7,21 @@
     <div class="col">
 
         <label for="category" class="form-label" >Categorias</label>
-        <app-select-categories (onChangeValues)="changed($event)"></app-select-categories>
+        <app-select-categories (onChangeCategoriesValues)="changeCategory($event)"></app-select-categories>
 
     </div>
 
     <div class="col">
 
         <label for="category" class="form-label" >Setor responsável</label>
-        <app-select-department></app-select-department>
+        <app-select-department (onChangeDepartmentValues)="changeDepartment($event)"></app-select-department>
 
     </div>
 
     <div class="col col-lg-2">
 
         <label for="invoice" class="form-label" >N da Nota</label>
-        <input type="text" class="form-control" >
+        <input type="text" class="form-control" formControlName="invoice_number">
 
     </div>
     <div class="col-6">
@@ -115,7 +115,7 @@
 
 
 <div class="button_create">
-  <button type="submit" class="btn btn-primary">Cadastrar</button>
+  <button type="submit" class="btn btn-primary" (click)="save()">Cadastrar</button>
 </div>
 
 

@@ -59,21 +59,21 @@ export interface ProductResponse {
 
 export interface ProductRequestCreate {
 
-        id_invoice: number;
-        id_category: number;
-        id_department: number;
-        name: string;
-        barcode: string;
-        part_number: string;
-        model: string;
-        condition: string;
-        quantity: number;
-        minimum_quantity: number;
-        value: number;
-        responsible: string;
-        location: string;
-        institute_code: string;
-    }
+  id_category: number;
+  id_department: number;
+  invoice_number: number;
+  name: string;
+  barcode: string;
+  part_number: string;
+  model: string;
+  condition: string;
+  quantity: number;
+  minimum_quantity: number;
+  value: number;
+  responsible: string;
+  location: string;
+  institute_code: string;
+}
 
 
 

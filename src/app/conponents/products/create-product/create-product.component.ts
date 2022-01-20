@@ -12,22 +12,8 @@ import { ProductRequestCreate } from './../model/product.model';
 })
 export class CreateProductComponent implements OnInit {
 
-  // @Input() request: ProductRequestCreate = {
-  //   id_invoice: 0,
-  //   id_category: 0,
-  //   id_department: 0,
-  //   name: '',
-  //   barcode: '',
-  //   part_number: '',
-  //   model: '',
-  //   condition: '',
-  //   quantity: 0,
-  //   minimum_quantity: 0,
-  //   value: 0.0,
-  //   responsible: '',
-  //   institute_code: '',
-  //   location: ''
-  // }
+  private category_number = 0
+  private department_number = 0
 
   productFormGroup!: FormGroup
 
@@ -41,9 +27,9 @@ export class CreateProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.productFormGroup = this.formBuilder.group({
-      id_invoice: [0, Validators.required],
-      id_category: [0, Validators.required],
-      id_department: [0, Validators.required],
+      // id_category: this.category_number,
+      // id_department: this.department_number,
+      invoice_number: ['', Validators.required],
       name: ['', Validators.required],
       barcode: ['', Validators.required],
       part_number: ['', Validators.required],
@@ -58,28 +44,9 @@ export class CreateProductComponent implements OnInit {
     })
   }
 
-  // createForm(product: ProductRequestCreate) {
-  //   this.productFormGroup = new FormGroup({
-
-  //     id_invoice: new FormControl(product.id_invoice),
-  //     id_category: new FormControl(product.id_category),
-  //     id_department: new FormControl(product.id_department),
-  //     name: new FormControl(product.name),
-  //     barcode: new FormControl(product.barcode),
-  //     part_number: new FormControl(product.part_number),
-  //     model: new FormControl(product.model),
-  //     condition: new FormControl(product.condition),
-  //     quantity: new FormControl(product.quantity),
-  //     minimum_quantity: new FormControl(product.minimum_quantity),
-  //     value: new FormControl(product.value),
-  //     responsible: new FormControl(product.responsible),
-  //     institute_code: new FormControl(product.institute_code),
-  //     location: new FormControl(product.location)
-
-  //   })
-  // }
 
   save() {
+    console.log(this.productFormGroup.value)
     this.service.createProducts(this.productFormGroup.value)
       .subscribe(res => {
         this.toast(res.name)
@@ -92,8 +59,18 @@ export class CreateProductComponent implements OnInit {
     this.toastr.success(`${name} registrado com sucesso!!`, "Sucesso")
   }
 
-  changed($event: any) {
-    console.log($event)
+  changeCategory($event: any) {
+    const category = $event['value']
+    this.category_number = category
+    // console.log('category: ',this.category_number)
+    this.productFormGroup.addControl('new', new FormControl(this.category_number))
+  }
+
+  changeDepartment($event: any) {
+    const department = $event['value']
+    this.department_number = department
+    // console.log('Department: ',this.department_number)
+    this.productFormGroup.addControl('new', new FormControl(this.department_number))
   }
 
 }

@@ -1,6 +1,6 @@
 import { DepartmentResponse } from './../model/department.model';
 import { DepartmentService } from './../department.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-select-department',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-department.component.css']
 })
 export class SelectDepartmentComponent implements OnInit {
+
+  @Output() onChangeDepartmentValues = new EventEmitter<any>()
 
   departmentResponse: DepartmentResponse[] = []
 
@@ -22,6 +24,11 @@ export class SelectDepartmentComponent implements OnInit {
         }
       })
 
+  }
+
+  onChanged(value:any){
+    const valueEmiter = {value: value.value}
+    this.onChangeDepartmentValues.emit(valueEmiter)
   }
 
 }
